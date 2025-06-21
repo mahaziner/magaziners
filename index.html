@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме | София Магазинер</title>
+    <style>
+        :root {
+            --primary: #5189d7;
+            --secondary: #6282d2;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --accent: #d27696;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            align-self: start;
+        }
+        
+        .main-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+        }
+        
+        .info-item h4 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .info-item p {
+            color: #666;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .job-title, .degree {
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .company, .institution {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            color: #555;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .skill {
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .about-text {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Магазинер София Витальевна</h1>
+            <h2>Developer</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+7 (953) 157-76-93</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>sofiamagaziner12@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Санкт-Петербург</span>
+                    <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/mahaziner" target="_blank">github.com/mahaziner</a>
+                </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <aside class="sidebar">
+                <section class="info-section">
+                    <h3>Основное</h3>
+                    <div class="info-item">
+                        <h4>График работы</h4>
+                        <p>Полный день</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Дата рождения</h4>
+                        <p>24 декабря 2005</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Пол</h4>
+                        <p>Женский</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Образование</h4>
+                        <p>Среднее</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Гражданство</h4>
+                        <p>Россия</p>
+                    </div>
+                </section>
+                
+                <section class="info-section">
+                    <h3>Навыки</h3>
+                    <div class="skills">
+                        <span class="skill">HTML/CSS</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Верстка</span>
+                        <span class="skill">SQLite</span>
+                        <span class="skill">Supabase</span>
+                    </div>
+                </section>
+                
+                <section class="info-section">
+                    <h3>Языки</h3>
+                    <div class="info-item">
+                        <h4>Русский</h4>
+                        <p>Родной</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Английский</h4>
+                        <p>A2</p>
+                    </div>
+                </section>
+                
+                <section class="info-section">
+                    <h3>Личные качества</h3>
+                    <div class="info-item">
+                        <p>Ответственность, отзывчивость, умение работать в команде, коммуникабельность, трудолюбие</p>
+                    </div>
+                </section>
+            </aside>
+            
+            <main class="main-section">
+                <section class="experience">
+                    <h3>Опыт работы</h3>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Продукт + фронтенд разработчик</div>
+                        <div class="company">Хакатон от giper.fm</div>
+                        <div class="description">
+                            <p>Мы писали сайт для мерча компании giper.fm, моя работа заключалась в верстке сайта и частичному его дизайну.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Фронтенд-разработчик</div>
+                        <div class="company">Хакатон внутри колледжа IThub</div>
+                        <div class="description">
+                            <p>Мы делали мини-приложение в телеграм, внутреннюю криптовалюту для студентов, за которую они могли бы получать призы, занималась снова версткой.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Developer</div>
+                        <div class="company">Телеграм Бот для записи к руководителям</div>
+                        <div class="description">
+                            <p>Мне доверили в колледже написать бота для записи к руководителям на встречу, я реализовала бота, подключила БД (в моем случае удобнее всего было использовать Supabase).</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="education">
+                    <h3>Образование</h3>
+                    
+                    <div class="education-item">
+                        <div class="degree">Среднее образование</div>
+                        <div class="institution">ГБОУСОШ №17</div>
+                        <div class="date">2023</div>
+                        <div class="description">
+                            <p>Форма обучения: Очная</p>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="degree">Информационные системы и программирование</div>
+                        <div class="institution">IThub</div>
+                        <div class="date">2026</div>
+                        <div class="description">
+                            <p>Специальность: бэкенд-разработчик</p>
+                            <p>Форма обучения: Очная</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="about">
+                    <h3>О себе</h3>
+                    <div class="about-text">
+                        <p>Я мотивирована изучать новое, готова к сложностям и задачам, которые вроде бы мне не по силам. У меня нет какого-то большого количества проектов, я не имею такие устойчивые и высокие харды как мне бы хотелось, но я бы очень хотела получить опыт работы в настоящей команде, хотела бы поучиться у профессионалов и взглянуть на компанию изнутри.</p>
+                        
+                        <p>Самый интересующий меня язык - это Python. Хотелось бы накапливать багаж знаний, не совсем уверенна в своих силах, но готова в большом количестве их прилагать, для того чтобы чувствовать себя на все 100%.</p>
+                        
+                        <p>Я активистка в колледже, постоянно хожу на мероприятия, помогаю немного с организацией, являюсь куратором у 1-курсников, подрабатываю в колледже на должности ассистента делопроизводителя.</p>
+                        
+                        <p>Хочу развиваться сама и в последующем возможно получиться помогать этим другим :)</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
